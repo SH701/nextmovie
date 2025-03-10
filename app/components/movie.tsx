@@ -12,14 +12,13 @@ export interface IMovieProps{
 }
 
 export default function Movie({title,id,poster_path}:IMovieProps){
-    const pathname = usePathname();
     const onClick = () =>{
         window.location.href=`/movies/${id}`
     }
     return(
         <div className={styles.movie}>
             <img src={poster_path} alt={title} onClick={onClick}/>
-            <Link href={`/movies/${id}`}>{title}</Link>
+            <Link prefetch href={`/movies/${id}`}>{title}</Link>
           </div>
     )
 }
