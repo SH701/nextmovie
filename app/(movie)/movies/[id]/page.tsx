@@ -3,15 +3,14 @@ import MovieInfo, { getMovie } from "../../../components/movie-info";
 import MovieVideos from "../../../components/movie-videos";
 
 
-type IParams = Promise<{
+interface IParams {
   id: string;
-}>;
+}
 
-export async function generateMetadata({
-    params: { id },}) {
-      const { title } = await getMovie(id)
-      return {title,}
-  }
+export async function generateMetadata({ params }: { params: IParams }) {
+  const { title } = await getMovie(params.id);
+  return { title };
+}
 
 
 export default async function MovieDetailPage(props:{ params : IParams}) {
