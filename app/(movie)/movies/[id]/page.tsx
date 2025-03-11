@@ -29,3 +29,10 @@ export default async function MovieDetailPage({ params }: PageProps ) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  return [
+    { id: "872585" }, 
+    { id: "299534" }  
+  ];
+}
