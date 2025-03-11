@@ -4,6 +4,7 @@ import MovieVideos from "../../../components/movie-videos";
 
 
 interface PageProps  {
+  id: string;
   params :{
     id: string
   };
@@ -28,11 +29,4 @@ export default async function MovieDetailPage({ params }: PageProps ) {
       </Suspense>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return [
-    { id: "872585" }, 
-    { id: "299534" }  
-  ];
 }
