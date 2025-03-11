@@ -7,18 +7,20 @@ async function getSimilarMovie(id: string) {
     return response.json();
 }
 
+
 export default async function Similar({ params }: { params: { id: string } }) {
     const similars = await getSimilarMovie(params.id);
 
     return (
         <div className={styles.container}>
-            {similars.map((similar)=>(
+            {similars.results.map((similar) => ( // ✅ API 응답 구조에 맞게 `results` 추가
                 <SimilarMovie 
-                key={similar.id}
-                id={similar.id} 
-                title={similar.title} 
-                poster_path={similar.poster_path}/>
+                    key={similar.id}
+                    id={similar.id} 
+                    title={similar.title} 
+                    poster_path={similar.poster_path}
+                />
             ))}
         </div>
-    )
+    );
 }
