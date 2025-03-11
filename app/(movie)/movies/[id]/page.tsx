@@ -4,7 +4,6 @@ import MovieVideos from "../../../components/movie-videos";
 
 
 interface PageProps  {
-  id: string;
   params :{
     id: string
   };
