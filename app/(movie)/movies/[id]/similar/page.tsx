@@ -2,9 +2,8 @@ import SimilarMovie from "../../../../components/similarmovie";
 import { API_url } from "../../../../config";
 import styles from "../similar/similar.module.css";
 
-export async function getSimilarMovie(id: string) {
-    const response = await fetch(`${API_url}/${id}/similar`,{
-    cache: "no-store"});
+async function getSimilarMovie(id: string) {
+    const response = await fetch(`${API_url}/${id}/similar`);
     return response.json();
 }
 
