@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import styles from "../../styles/movie.module.css"
+import styles from "../../styles/similarmovie.module.css"
 
 
 export interface IMovieProps{
@@ -10,9 +10,9 @@ export interface IMovieProps{
     poster_path:string
 }
 
-export default function Movie({title,id,poster_path}:IMovieProps){
+export default function SimilarMovie({title,id,poster_path}:IMovieProps){
     const onClick = () =>{
-        window.location.href=`/movies/${id}`
+        window.location.href=`/movies/${id}/`
     }
     return(
         <div className={styles.movie}>
