@@ -2,26 +2,30 @@ import { Suspense } from "react";
 import MovieInfo, { getMovie } from "../../../components/movie-info";
 import MovieVideos from "../../../components/movie-videos";
 
-type IParams = {
-  id: string;
-};
+type SegmentParams<T extends object = any> = T extends Record<string, any>
+  ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }
+  : T;
 
-export async function generateMetadata({ params }: { params:  IParams  }) {
-  const movie = await getMovie(params.id);
-  return {
-    title: movie.title,
-  };
+export interface PageProps {
+  params: SegmentParams
+  searchParams: any
 }
 
 
-export default async function MovieDetailPage(props:{ params : IParams}) {
-  const params = await props.params;
+export async function generateMetadata({ params }: PageProps) {
+    const movie = await getMovie(params.id);
+    return {
+      title: movie.title 
+    };
+}
+
+export default async function MovieDetailPage({ params }: PageProps) {
   return (
     <div>
-      <Suspense fallback={<h1>Loading movie info</h1>}>
+      <Suspense fallback={<h1>Loading movie info...</h1>}>
         <MovieInfo id={params.id} />
       </Suspense>
-      <Suspense fallback={<h1>Loading movie videos</h1>}>
+      <Suspense fallback={<h1>Loading movie videos...</h1>}>
         <MovieVideos id={params.id} />
       </Suspense>
     </div>
