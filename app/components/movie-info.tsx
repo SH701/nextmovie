@@ -27,7 +27,7 @@ export default async function MovieInfo({id}:{id:string}) {
             <div className={styles.box}>
                 <h1 className={styles.title}>{movie.title}</h1>
                 {movie.genres.slice(0, 2).map((genre) => genre.name).join(", ")}
-                <h3>⏰{movie.runtime} Min</h3>
+                <h3>⏰{movie.runtime}min</h3>
                 <h3>⭐{movie.vote_average.toFixed(1)}</h3>
                 <h3>📅{movie.release_date}</h3>
                 <p className={styles.info}>{movie.overview}</p>

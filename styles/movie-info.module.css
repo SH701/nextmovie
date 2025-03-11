@@ -1,109 +1,178 @@
+/* 기본 스타일 */
 .section {
-    width:80%;
-    margin:0 auto;
+    width: 80%;
+    margin: 0 auto;
   }
-.container {
+  .container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
     width: 80%;
     margin: 0 auto;
-    padding: 50px 0px;
-}
-.box{
-    border:0 solid #e5e7eb;
+    padding: 50px 0;
+  }
+  .box {
+    border: 1px solid #e5e7eb;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-width: 1px;
-    border-radius:20px;
-    padding:30px;
+    border-radius: 20px;
+    padding: 30px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size:16px;
-}
-.poster {
+    font-size: 16px;
+  }
+  .poster {
     border-radius: 20px;
     max-height: 100%;
     max-width: 100%;
     place-self: center;
-}
-
-.title {
+  }
+  .title {
     font-size: 36px;
     font-weight: 600;
-    padding-bottom:10px;
-}
-.info {
+    padding-bottom: 10px;
+  }
+  .info {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 20px;
     line-height: 1.6;
-    word-spacing: 0.05em; 
-    letter-spacing: 0.02em; 
-}
-.linkbox{
-    display: flex;
-    flex-direction: row;
+    word-spacing: 0.05em;
+    letter-spacing: 0.02em;
+  }
+  .linkbox {
     display: block;
     margin-top: 30px;
     margin-bottom: 10px;
-}
-.homepage{
+  }
+  .homepage {
     border: 1px solid #E2E8F0;
     font-size: 14px;
     margin-right: 10px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
     padding: 8px;
-}
-.homepage:hover{
+  }
+  .homepage:hover {
     background-color: #EAEFF5;
-}
-.credit {
+  }
+  .credit {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 80%;
-    margin:0 auto;
+    margin: 0 auto;
     margin-top: 20px;
-    padding: 50px 0px;
-}
-
-.card {
+    padding: 50px 0;
+  }
+  .card {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    justify-content: flex-start; 
-}
-
-.actor {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  .actor {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    width: 150px; 
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
     text-align: center;
-}
-
-.actor img {
-    width: 120px; 
+  }
+  .actor img {
+    width: 120px;
     object-fit: cover;
-    border-radius: 14px; 
-    margin-bottom: 10px; 
-}
-.name{
-    font-size:16px;
-}
-.character{
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .character {
     font-size: 15px;
-    color:#A0A0A0;
-}
-.all{
+    color: #A0A0A0;
+  }
+  .all {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-left: 10px;
     font-size: 20px;
-}
-.all:hover{
+  }
+  .all:hover {
     text-decoration: underline;
-}
+  }
+  
+  /* 태블릿 이하 (max-width: 768px) */
+  @media (max-width: 768px) {
+    .section {
+      width: 90%;
+    }
+    .container {
+      grid-template-columns: 1fr;  /* 2열 → 1열 */
+      gap: 30px;
+      padding: 30px 0;
+    }
+    .box {
+      padding: 20px;
+      font-size: 15px;
+    }
+    .title {
+      font-size: 28px;
+    }
+    .info {
+      gap: 15px;
+    }
+    .credit {
+      width: 90%;
+      padding: 30px 0;
+    }
+    .card {
+      justify-content: center;
+    }
+    .actor {
+      width: 45%;  /* 두 열로 나열하거나 상황에 맞춰 조정 */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* 모바일 이하 (max-width: 480px) */
+  @media (max-width: 480px) {
+    .section {
+      width: 95%;
+    }
+    .container {
+      padding: 20px 0;
+      gap: 20px;
+    }
+    .box {
+      padding: 15px;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 24px;
+    }
+    .info {
+      gap: 10px;
+    }
+    .credit {
+      /* 카드와 "See All →"를 수직 배치할 때 가운데 정렬 */
+      padding: 20px 0;
+      align-items: center;
+    }
+    .card {
+      /* 배우 목록 세로(column) 정렬 */
+      flex-direction: column;
+      align-items: center;
+    }
+    .actor {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .all {
+      /* 목록 아래쪽으로 내려오도록 마진 조절 */
+      margin-top: 15px;
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+  
