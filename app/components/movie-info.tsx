@@ -15,7 +15,7 @@ async function getCredit(id: string) {
 export default async function MovieInfo({id}:{id:string}) {
     const movie = await getMovie(id);
     const credits = await getCredit(id);
-    const actor = credits.slice(0,3);
+    const actor = credits.slice(0,6);
 
     return (
         <>
@@ -26,13 +26,18 @@ export default async function MovieInfo({id}:{id:string}) {
             <img className={styles.poster} src={movie.backdrop_path} />
             <div className={styles.box}>
                 <h1 className={styles.title}>{movie.title}</h1>
+                {movie.genres.slice(0, 2).map((genre) => genre.name).join(", ")}
+                <h3>⏰{movie.runtime} Min</h3>
                 <h3>⭐{movie.vote_average.toFixed(1)}</h3>
+                <h3>📅{movie.release_date}</h3>
                 <p className={styles.info}>{movie.overview}</p>
+                <div className={styles.linkbox}>
                 <a className={styles.homepage} href={movie.homepage}
-                    target={"_blank"}>homepage &rarr;</a>
-                <Link href={`/movies/${id}/similar`} >
-                    similar &rarr;
+                    target={"_blank"}>Homepage</a>
+                <Link className={styles.homepage} href={`/movies/${id}/similar`} >
+                    Similar
                 </Link>
+                </div>
         </div>
         </div>
         <div className={styles.section}>

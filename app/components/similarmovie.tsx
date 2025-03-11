@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import styles from "../../styles/similarmovie.module.css"
+import styles from "../../styles/movie.module.css"
 
 
 export interface IMovieProps{

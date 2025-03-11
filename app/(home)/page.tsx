@@ -1,5 +1,5 @@
 import Movie from "../components/movie";
-import styles from "../(home)/home.module.css"
+import styles from "../../styles/home.module.css"
 import { API_url } from "../config";
 
 

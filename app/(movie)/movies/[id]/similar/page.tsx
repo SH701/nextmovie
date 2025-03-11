@@ -1,6 +1,6 @@
 import SimilarMovie from "../../../../components/similarmovie";
 import { API_url } from "../../../../config";
-import styles from "../similar/similar.module.css";
+import styles from "../../../../../styles/home.module.css";
 
 type IParams = Promise<{ id: string }>;
 
