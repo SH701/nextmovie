@@ -6,7 +6,7 @@ type IParams = Promise<{
     id: string;
   }>;
 
-export async function getCredit(id: string) {
+async function getCredit(id: string) {
     const response = await fetch(`${API_url}/${id}/credits`);
     return await response.json();
 }

@@ -1,18 +1,19 @@
 import { API_url } from "../config";
 import styles from "../../styles/movie-info.module.css"
 import Link from "next/link";
-import {getCredit} from "../(movie)/movies/[id]/credits/page"
-import {getSimilarMovie} from "../(movie)/movies/[id]/similar/page"
 
 export async function getMovie(id:string) {
     const response  = await fetch(`${API_url}/${id}`,{});
     return response.json();
 
 }
+async function getCredit(id: string) {
+    const response = await fetch(`${API_url}/${id}/credits`);
+    return await response.json();
+}
 
 export default async function MovieInfo({id}:{id:string}) {
     const movie = await getMovie(id);
-    const similar = await getSimilarMovie(id);
     const credits = await getCredit(id);
     const actor = credits.slice(0,3);
 
