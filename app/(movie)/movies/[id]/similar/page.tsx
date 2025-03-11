@@ -2,21 +2,18 @@ import SimilarMovie from "../../../../components/similarmovie";
 import { API_url } from "../../../../config";
 import styles from "../similar/similar.module.css";
 
-interface Params {
-    id: string;
-  }
-  
-  interface PageProps {
-    params: Params;
-  }
+type IParams = Promise<{ id: string }>;
+
+
 async function getSimilarMovie(id: string) {
     const response = await fetch(`${API_url}/${id}/similar`);
     return response.json();
 }
 
 
-export default async function Similar({ params }: PageProps) {
-    const similars = await getSimilarMovie(params.id);
+export default async function Similar({ params }: { params: IParams }) {
+    const resolvedParams = await params;
+    const similars = await getSimilarMovie(resolvedParams.id);
 
     return (
         <div className={styles.container}>
