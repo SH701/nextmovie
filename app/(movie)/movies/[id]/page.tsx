@@ -21,9 +21,9 @@ export default async function MovieDetailPage(props:{ params : IParams}) {
       <Suspense fallback={<h1>Loading movie info</h1>}>
         <MovieInfo id={params.id} />
       </Suspense>
-      {/* <Suspense fallback={<h1>Loading movie videos</h1>}>
+      <Suspense fallback={<h1>Loading movie videos</h1>}>
         <MovieVideos id={params.id} />
-      </Suspense> */}
+      </Suspense>
     </div>
   );
 }
