@@ -25,7 +25,11 @@
     font-weight: 600;
   }
   @media (max-width: 768px) {
+    .movie img{
+      width: 90%;
+    }
     .title {
+      font-size: 18px;
       padding:15px 0px;
     }
   }
