@@ -22,6 +22,9 @@
     font-weight: 600;
   }
   @media (max-width: 768px) {
+    .movie{
+      gap:100px;
+    }
     .movie img {
       width: 90%;
     }
