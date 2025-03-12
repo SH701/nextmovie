@@ -24,10 +24,9 @@
   @media (max-width: 768px) {
     .movie {
       width: 90%;
-      gap: 30px; 
     }
     .title {
       font-size: 18px;
-      margin-top: 20px;
+      margin:5% 0;
     }
   }
