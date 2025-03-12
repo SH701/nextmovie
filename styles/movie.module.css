@@ -27,6 +27,7 @@
   @media (max-width: 768px) {
     .movie img{
       width: 90%;
+      height: 90%;
     }
     .title {
       font-size: 18px;
