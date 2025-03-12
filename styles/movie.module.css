@@ -17,15 +17,15 @@
   .movie img:hover {
     opacity: 0.8;
   }
-  .title{
+  .movie a{
     text-align: center;
     font-weight: 600;
   }
   @media (max-width: 768px) {
-    .movie {
+    .movie img {
       width: 90%;
     }
-    .title {
+    .movie a {
       font-size: 18px;
       margin:5% 0;
     }
