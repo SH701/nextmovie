@@ -11,6 +11,9 @@ export interface PageProps {
   searchParams: any
 }
 
+export async function generateStaticParams() {
+  return [];
+}
 
 export async function generateMetadata({ params }: PageProps) {
     const movie = await getMovie(params.id);
@@ -20,6 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function MovieDetailPage({ params }: PageProps) {
+  
   return (
     <div>
       <Suspense fallback={<h1>Loading movie info...</h1>}>

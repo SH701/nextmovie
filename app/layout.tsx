@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes"
 import "../styles/global.css"
 import Navigation from "./components/navigation"
 
