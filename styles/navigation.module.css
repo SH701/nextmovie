@@ -1,28 +1,30 @@
 .nav {
-  position: absolute; 
   margin: 0 auto;
-  top: 20px;
-  border-radius: 50px;
-  padding: 10px 0px;
-  left: 50%;
-  transform: translateX(-50%);
+  padding-bottom: 20px; 
   z-index: 10;
   font-weight: 600;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif
+
 }
-.home{
+
+.home {
+  position: relative;
   color: #686de0;
   text-shadow: none;
-  padding: 10px 0;
+  padding: 10px;
   font-size: 24px;
+  transition: color 0.5s ease;
 }
+
 .home:before {
   color: #000000;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
   content: attr(data-hover);
   position: absolute;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.5s, opacity 0.5s;
   pointer-events: none;
 }
 
@@ -35,25 +37,44 @@
   height: 2px;
   background: #aeacac;
   opacity: 0;
-  -webkit-transform: translateY(5px);
-  -moz-transform: translateY(5px);
   transform: translateY(5px);
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.5s, opacity 0.5s;
   pointer-events: none;
 }
 
-.home:hover:before, .home:focus:before {
+.home:hover:before,
+.home:focus-visible:before {
   opacity: 0;
-  -webkit-transform: translateY(-2px);
-  -moz-transform: translateY(-2px);
   transform: translateY(-2px);
 }
 
-.home:hover:after, .home:focus:after {
+.home:hover:after,
+.home:focus-visible:after {
   opacity: 1;
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  transform: translateY(0px);
+  transform: translateY(0);
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border:0;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.5s ease;
+  background-color: inherit;
+}
+:global(html.dark) .home::before {
+  color: #FFFFFF;
+  transition: color 0.5s ease;
+}
+:global(html.light) .home:before{
+  transition: color 0.5s ease;
+  color:#000000;
+}
+:global(html.dark) .btn {
+  color: #FFFFFF;
 }

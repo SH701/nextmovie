@@ -170,3 +170,9 @@
     }
   }
   
+  :global(html.dark) .box , .homepage {
+    border: 2px solid #313030;
+  }
+  :global(html.dark) .homepage:hover {
+    background-color: #282424;
+  }

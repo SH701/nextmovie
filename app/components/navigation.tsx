@@ -6,10 +6,16 @@ import { useTheme } from "next-themes";
 
 
 export default function Navigation() {
+  const {theme,setTheme} = useTheme();
+
+  const toggleTheme=()=>{
+    setTheme(theme ==="light" ? "dark" : "light");
+  }
   
   return (
     <nav className={styles.nav}>
      <Link className={styles.home} href="/" data-hover="Home">Home</Link>
+    <button className={styles.btn} onClick={toggleTheme}>Mode</button>
     </nav>
   );
 }
