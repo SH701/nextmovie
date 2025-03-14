@@ -32,6 +32,9 @@
     }
   }
   @media(max-width:480px){
+    .movie img {
+      height: 450px;
+    }
     .movie a {
       display: none;
     }
