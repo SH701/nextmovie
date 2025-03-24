@@ -23,7 +23,7 @@
   }
   @media (max-width: 768px) {
     .movie img {
-      max-width: 80%;
+      max-width: 90%;
       margin:30px 0px;
       height: auto;
     }
